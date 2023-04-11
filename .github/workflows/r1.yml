@@ -4,9 +4,12 @@ name: R1
 
 jobs:
 
+
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Azure CLI Action
+      uses: Azure/cli@v1.0.7
     
     - name: Login via Az module
       uses: azure/login@v1
