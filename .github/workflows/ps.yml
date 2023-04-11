@@ -13,5 +13,5 @@ jobs:
         with:
           pwsh-version: '7.1'
       - name: Run PowerShell script
-      run: |
-        pwsh -File ./Users/utkarsh/Desktop/date1.ps1
+        run: |
+           pwsh -File ./Users/utkarsh/Desktop/date1.ps1
