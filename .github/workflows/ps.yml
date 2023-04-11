@@ -6,12 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Set up PowerShell environment
-      uses: actions/setup-powershell@v1
-      with:
-        pwsh-version: '7.1'
-    - name: Run PowerShell script
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up PowerShell environment
+        uses: actions/setup-powershell@v1
+        with:
+          pwsh-version: '7.1'
+      - name: Run PowerShell script
       run: |
         pwsh -File ./Users/utkarsh/Desktop/date1.ps1
