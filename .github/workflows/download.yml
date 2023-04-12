@@ -7,11 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Download file
-        uses: actions/download-artifact@v2
-        with:
-          name: Demo2
       - name: Print file contents
         run: |
           cat  /home/runner/work/demo2/demo2/Demo2.txt
