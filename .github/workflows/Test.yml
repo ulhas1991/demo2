@@ -20,8 +20,6 @@ jobs:
         enable-AzPSSession: true 
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Set up PowerShell environment
-      uses: actions/setup-powershell@v1
       with:
           powershell-version: '7.1'
     - run: |
