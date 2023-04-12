@@ -22,7 +22,7 @@ jobs:
       - name: Download file
         uses: actions/download-artifact@v2
         with:
-          name: demo2
+          name: Demo2
       - name: Print file contents
         run: |
           cat Demo2/Demo2.txt
