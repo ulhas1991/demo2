@@ -19,5 +19,4 @@ jobs:
         enable-AzPSSession: true 
     - run: |
         write-host"Hello from ps"
-        Get-AzVM -ResourceGroupName "ResourceGroup11"
         
