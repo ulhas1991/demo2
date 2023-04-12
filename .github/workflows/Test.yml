@@ -1,0 +1,28 @@
+
+# File: .github/workflows/workflow.yml
+
+on: 
+  workflow_dispatch:
+
+name: Tst
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: true
+        enable-AzPSSession: true 
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up PowerShell environment
+      uses: actions/setup-powershell@v1
+      with:
+          powershell-version: '7.1'
+    - run: |
+        pwsh -Command Write-Host "Usage details for all resources in subscription "
