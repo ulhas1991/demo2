@@ -25,4 +25,4 @@ jobs:
           name: Demo2
       - name: Print file contents
         run: |
-          cat Demo2/Demo2.txt
+          cat demo2/Demo2.txt
