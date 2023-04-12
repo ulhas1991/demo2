@@ -12,7 +12,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Demo2
-          path: demo2.txt
+          path: /demo2.txt
   download:
     runs-on: ubuntu-latest
     needs: [upload]
