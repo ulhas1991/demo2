@@ -1,6 +1,6 @@
 ﻿$Data =[System.Collections.ArrayList]:: Synchronized((New-Object System.Collections.ArrayList))
 $All_Subscriptions = Get-AzSubscription
-$rawdata = import-csv -path /Users/Administrator/Desktop/Book21.csv
+#$rawdata = import-csv -path /Users/Administrator/Desktop/Book21.csv
 $All_Unattached_Disks = $null
 
 $billingPeriodStartDate = (Get-Date).AddMonths(-1).ToString("yyyy-MM-01")
