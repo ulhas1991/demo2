@@ -26,7 +26,12 @@ jobs:
       run: |
        pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
        pwsh -Command Install-Module -Name Az -AllowClobber
-       pwsh -Command Connect-AzAccount -TenantId 3fcee3c0-6bef-4260-82da-d16909225811
+       pwsh -Command $User = "ulhas.us@gmail.com"
+       pwsh -Command $PWord = ConvertTo-SecureString -String "Pooja1995@" -AsPlainText -Force
+       pwsh -Command $tenant = "3fcee3c0-6bef-4260-82da-d16909225811"
+       pwsh -Command$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
+       #pwsh -Command Connect-AzAccount -TenantId 3fcee3c0-6bef-4260-82da-d16909225811
+       pwsh -Command Login-AzAccount -Credential $credentials
        pwsh -File Final_12-04-2023.ps1
     - run: |
         pwsh -Command Write-Host "Usage details for all resources in subscription "
