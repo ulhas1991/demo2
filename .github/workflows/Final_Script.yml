@@ -24,8 +24,8 @@ jobs:
           powershell-version: '7.1'
     - name: Run PowerShell script
       run: |
-       pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
-       pwsh -Command Install-Module -Name Az -AllowClobber
+       #pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+       #pwsh -Command Install-Module -Name Az -AllowClobber
        #pwsh -Command Connect-AzAccount -TenantId 3fcee3c0-6bef-4260-82da-d16909225811
        
        pwsh -File Final_12-04-2023.ps1
