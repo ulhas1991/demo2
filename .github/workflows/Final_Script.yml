@@ -22,6 +22,10 @@ jobs:
       uses: actions/checkout@v2
       with:
           powershell-version: '7.1'
+    - name: "Inline"
+      with:
+        inlineScript: |
+          write-host "Hello"
     - name: Run PowerShell script
       run: |
        #pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
