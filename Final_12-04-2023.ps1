@@ -17,7 +17,7 @@ write-host $lastDayOfMonth
 
 Write-Host "ALll Subscription is count is "$All_Subscriptions.count
 #$All_Unattached_Disks = Foreach ($Subscription in $All_Subscriptions)
-$rawdata| ForEach-Object -Parallel{
+$All_Subscriptions| ForEach-Object -Parallel{
     
     
     #Getting data for every subscription
