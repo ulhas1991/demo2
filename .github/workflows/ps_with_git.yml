@@ -28,6 +28,8 @@ jobs:
        pwsh -File Final_12-04-2023.ps1
     - name: Commit files
       run: |
+        git config --local user.email "ulhas1991@github.com"
+        git config --local user.name "github-actions[bot]"
         git commit -a -m "Add changes"
     - name: Push changes
       uses: ad-m/github-push-action@master
