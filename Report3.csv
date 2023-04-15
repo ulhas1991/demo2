@@ -1,0 +1,3 @@
+"Disk_Object","Disk_Name","Disk_State","Subscription_Name","Disk_Resource_Group_Name","Billing_Object","Cost","Subscription_ID"
+"Microsoft.Azure.Commands.Compute.Automation.Models.PSDiskList","Test_DataDisk_0","Unattached","Pay-As-You-Go","TEST","System.Object[]","69.0196905015238","bce9f594-9372-473c-a065-02f2f76eaab0"
+"Microsoft.Azure.Commands.Compute.Automation.Models.PSDiskList","Test_OsDisk_1_fe52e0da6eca4ec79a65c355f359a425","Unattached","Pay-As-You-Go","TEST","System.Object[]","69.0569853014844","bce9f594-9372-473c-a065-02f2f76eaab0"
