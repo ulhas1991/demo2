@@ -87,6 +87,6 @@ $All_Subscriptions| ForEach-Object -Parallel{
         }
     }-ThrottleLimit 10
     
-    $Data | Export-Csv /Users/Administrator/Desktop/Report3.csv -NoTypeInformation
+    $Data | Export-Csv Report3.csv -NoTypeInformation
     
     
