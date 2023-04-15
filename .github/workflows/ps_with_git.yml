@@ -1,0 +1,38 @@
+
+on: 
+  workflow_dispatch:
+
+name: PS_FINAL_WITH_COMMIT
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: true
+        enable-AzPSSession: true 
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+          powershell-version: '7.1'
+    - name: Run PowerShell script
+      run: |
+       pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+       pwsh -Command Install-Module -Name Az -AllowClobber
+       pwsh -Command Connect-AzAccount -TenantId 3fcee3c0-6bef-4260-82da-d16909225811
+       pwsh -File Final_12-04-2023.ps1
+    - name: Commit files
+      run: |
+        git commit -a -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+    - run: |
+        pwsh -Command Write-Host "Usage details for all resources in subscription "
