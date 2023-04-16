@@ -7,7 +7,7 @@ $billingPeriodStartDate = (Get-Date).AddMonths(-1).ToString("yyyy-MM-01")
 $lastDayOfMonth = (Get-Date).AddMonths(-1).AddDays(-((Get-Date).AddMonths(-1).Day - 1)).AddMonths(1).AddDays(-1).ToString("yyyy-MM-ddT23:59:59Z")
 
 
- $currentDate = Get-Date
+$currentDate = Get-Date
 $lastDayOfMonth = $currentDate.AddDays(-($currentDate.Day)).Date
 $billingPeriodStartDate = $lastDayOfMonth.AddMonths(-1).AddDays(1).Date
 Write-Host $billingPeriodStartDate
@@ -86,7 +86,7 @@ $All_Subscriptions| ForEach-Object -Parallel{
         Write-Host "No unattatched disks in subscription ""$($_.Name)!""" -ForegroundColor Green
         }
     }-ThrottleLimit 10
-    
-    $Data | Export-Csv Report3.csv -NoTypeInformation
+    $currentDate = Get-Date -Format "yyyyMMdd"
+    $Data | Export-Csv Report3_$currentDate.csv -NoTypeInformation
     
     
