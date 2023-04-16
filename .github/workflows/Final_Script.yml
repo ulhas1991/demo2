@@ -21,7 +21,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       with:
-          powershell-version: '7.1'
+          powershell-version: '7.1'      
+    - name: Install PS Dependencies
+      run: |
+       pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+       pwsh -Command Install-Module -Name Az -AllowClobber
+       pwsh -Command Connect-AzAccount -TenantId 3fcee3c0-6bef-4260-82da-d16909225811    
+       
     - name: Run PowerShell script
       run: |
        pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
