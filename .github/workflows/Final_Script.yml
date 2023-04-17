@@ -1,10 +1,8 @@
 
-# File: .github/workflows/workflow.yml
-
 on: 
   workflow_dispatch:
 
-name: PS_Final
+name: Orphaned_Disks_Final
 
 jobs:
 
@@ -26,7 +24,7 @@ jobs:
       run: |
        pwsh -Command Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
        pwsh -Command Install-Module -Name Az -AllowClobber
-       pwsh -Command Connect-AzAccount -TenantId 3fcee3c0-6bef-4260-82da-d16909225811    
+       pwsh -Command Connect-AzAccount 
        
     - name: Run PowerShell script
       run: |
@@ -34,5 +32,4 @@ jobs:
        pwsh -Command Install-Module -Name Az -AllowClobber
        pwsh -Command Connect-AzAccount -TenantId 3fcee3c0-6bef-4260-82da-d16909225811
        pwsh -File Final_12-04-2023.ps1
-    - run: |
-        pwsh -Command Write-Host "Usage details for all resources in subscription "
+    
